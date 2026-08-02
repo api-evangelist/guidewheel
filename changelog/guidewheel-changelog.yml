@@ -1,0 +1,111 @@
+generated: '2026-08-01'
+method: searched
+source: https://support.guidewheel.app/en/collections/2297342-new-guidewheel-releases
+url: https://support.guidewheel.app/en/collections/2297342-new-guidewheel-releases
+scheme: dated-product-release-notes
+note: >-
+  Guidewheel publishes product release notes as a dated help-centre collection ("New
+  Guidewheel Releases"), grouped by month. These are product/feature announcements, not
+  API version release notes — Guidewheel publishes no API changelog. The most recent
+  dated group at capture time is October 2025; newer feature guides (e.g. the Wheelie
+  assistant, the Plants page) are published in the Product Feature Guides collection
+  rather than as dated releases.
+current_version: v1 (API); product releases are not versioned
+latest_dated_entry: '2025-10'
+entries:
+- date: '2025-10'
+  breaking: false
+  highlights:
+  - title: Guidewheel is now available in Spanish
+    summary: Change your preferred language in Guidewheel to Spanish.
+    url: https://support.guidewheel.app/en/articles/12022476-guidewheel-is-now-available-in-spanish
+  - title: Apply shift schedules to alert windows
+    summary: Configure alert windows so teams receive relevant alerts during their shifts.
+    url: https://support.guidewheel.app/en/articles/12694690-apply-shift-schedules-to-alert-windows
+- date: '2025-09'
+  breaking: false
+  highlights:
+  - title: Flashing Scoreboard Tiles
+    summary: Identify down machines with flashing tiles for faster visibility and action.
+    url: https://support.guidewheel.app/en/articles/12063619-flashing-scoreboard-tiles
+  - title: Automatically create production entries from your plant schedule
+    summary: Create production entries from a plant's operating schedule without manual
+      uploads or integrations.
+    url: https://support.guidewheel.app/en/articles/12384073-automatically-create-production-entries-from-your-plant-schedule
+  - title: Introducing the OEE Monitor
+    summary: A single view to monitor and improve production performance in real time.
+    url: https://support.guidewheel.app/en/articles/11962366-introducing-the-oee-monitor
+- date: '2025-07'
+  breaking: false
+  highlights:
+  - title: Pareto Analysis Improvements
+    summary: Upgraded Pareto analysis makes downtime root-cause analysis faster and more
+      reliable.
+    url: https://support.guidewheel.app/en/articles/11880509-pareto-analysis-improvements
+- date: '2025-06'
+  breaking: false
+  highlights:
+  - title: Downtime Email Reports
+    summary: A daily view into where production time is being lost and why.
+    url: https://support.guidewheel.app/en/articles/11585243-downtime-email-reports
+  - title: Targets and Standards Settings Refresh
+    summary: Updated how targets are set and updated for devices.
+    url: https://support.guidewheel.app/en/articles/11635773-targets-and-standards-settings-refresh
+- date: '2025-03'
+  breaking: false
+  highlights:
+  - title: View machine data in mobile alerts
+    summary: See real-time machine data in mobile alerts to understand what triggered an
+      issue.
+    url: https://support.guidewheel.app/en/articles/10762132-view-machine-data-in-mobile-alerts
+  - title: View machine stops and duration in Uptime
+    summary: Clearer insight into machine stops and their durations.
+    url: https://support.guidewheel.app/en/articles/10874989-view-machine-stops-and-duration-in-uptime
+- date: '2025-02'
+  breaking: false
+  highlights:
+  - title: New production rate view
+    summary: Track production rate in real time.
+    url: https://support.guidewheel.app/en/articles/10556936-new-production-rate-view
+  - title: Add performance data to your email reports
+    summary: Real-time production insights delivered to your inbox.
+    url: https://support.guidewheel.app/en/articles/10630165-add-performance-data-to-your-email-reports
+  - title: Current shift performance on the uptime page
+    summary: Track uptime and key shift insights in real time.
+    url: https://support.guidewheel.app/en/articles/10648019-now-view-current-shift-performance-on-the-uptime-page
+  - title: New Alert Escalation Setting
+    summary: Keep alerts escalating until an issue is resolved.
+    url: https://support.guidewheel.app/en/articles/10683362-new-alert-escalation-setting
+- date: '2025-01'
+  breaking: false
+  highlights:
+  - title: 'Introducing the Plant Pulse map'
+    summary: Visualize operations across plants.
+    url: https://support.guidewheel.app/en/articles/10418083-introducing-the-plant-pulse-map-visualize-your-operations-with-ease
+- date: '2024-12'
+  breaking: false
+  highlights:
+  - title: 'Email Report: cycle data now available'
+    summary: Add cycle data to automated email reports.
+    url: https://support.guidewheel.app/en/articles/10302360-email-report-cycle-data-now-available
+- date: '2024-11'
+  breaking: false
+  highlights:
+  - title: Introducing Scoreboard Segments
+    url: https://support.guidewheel.app/en/articles/10128228-introducing-scoreboard-segments
+  - title: Track production progress with Scoreboard
+    url: https://support.guidewheel.app/en/articles/10204407-track-production-progress-with-scoreboard
+  - title: Track runtime performance by plant on the Trends page
+    url: https://support.guidewheel.app/en/articles/10228145-easily-track-runtime-performance-by-plant-on-the-trends-page
+- date: '2024-08'
+  breaking: false
+  highlights:
+  - title: Split issues for improved downtime tracking
+    url: https://support.guidewheel.app/en/articles/9797782-split-issues-for-improved-downtime-tracking
+  - title: Drill down into plants directly from Scoreboard
+    url: https://support.guidewheel.app/en/articles/9797081-drill-down-into-plants-directly-from-scoreboard
+x-evidence:
+  fetched: '2026-08-01'
+  url: https://support.guidewheel.app/en/collections/2297342-new-guidewheel-releases
+  http_status: 200
+  article_count_at_capture: 25

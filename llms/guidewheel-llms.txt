@@ -1,0 +1,43 @@
+# Guidewheel
+
+> Guidewheel is the first FactoryOps platform. It uses non-invasive, clip-on current sensors that attach to any machine's power leads — regardless of age, make, or model — and stream a real-time "heartbeat" of machine state (running, idle, down) over cellular, with no PLC access or plant Wi-Fi required. The platform turns that signal into real-time OEE, downtime categorization, Pareto analysis, cycle-time tracking, and production reporting so manufacturers can reduce downtime, increase production from existing assets, and continuously improve. Trusted by hundreds of leading manufacturers including Georgia-Pacific, Hershey, Ecolab, US Steel, GM, and Johnson & Johnson.
+
+## Key facts
+- Category: FactoryOps / machine monitoring / OEE software for manufacturing
+- Founded by: Lauren Dunford (CEO) and Weston McBride (CTO)
+- Core differentiator: non-invasive clip-on current sensors that work on any machine without PLC/SCADA integration; deploys in days, not months
+- Connectivity: cellular — no reliance on plant Wi-Fi
+- Integrations: SAP (native), Oracle, Epicor, Microsoft Dynamics, Salesforce, Power BI, MaintainX, and more via Workato and an open API
+- Performance dataset: 3,000+ machines and 74M+ machine-minutes analyzed
+
+## Solutions
+- [FactoryOps Overview](https://www.guidewheel.com/solutions/factoryops-overview): The full FactoryOps platform for real-time factory visibility and performance.
+- [Reduce Downtime](https://www.guidewheel.com/solutions/reduce-downtime): Catch and categorize downtime in real time to cut controllable losses.
+- [Increase Production](https://www.guidewheel.com/solutions/increase-production): Unlock hidden capacity from existing machines without new equipment or headcount.
+- [Equip Teams to Win](https://www.guidewheel.com/solutions/equip-teams): Give operators, supervisors, and plant managers a shared source of truth.
+- [Continuously Improve](https://www.guidewheel.com/solutions/continuously-improve): Track plant-wide OEE and scale improvement across lines and sites.
+
+## Industries
+- [All Industries](https://www.guidewheel.com/industries/industry-overview)
+- [Plastics & Packaging](https://www.guidewheel.com/industries/plastics-and-packaging)
+- [Food & Beverage](https://www.guidewheel.com/industries/food-and-beverage)
+- [Steel & Metals](https://www.guidewheel.com/industries/steel-and-metals)
+- [Automotive](https://www.guidewheel.com/industries/automotive)
+- [Construction & Building Materials](https://www.guidewheel.com/industries/construction-and-building-materials)
+- [Consumer Goods](https://www.guidewheel.com/industries/consumer-goods)
+
+## Resources
+- [Blog](https://www.guidewheel.com/blog): Practical guides on machine monitoring, OEE, downtime, and FactoryOps.
+- [Case Studies](https://www.guidewheel.com/case-studies): Customer results (e.g., Penn Color +30% asset utilization; Weatherables +12% OEE).
+- [Pricing](https://www.guidewheel.com/pricing): Plans and pricing.
+- [All Resources](https://www.guidewheel.com/resources)
+
+## Company
+- [About Us](https://www.guidewheel.com/company/about-us): Mission to help the world's 10 million factories reach sustainable peak performance.
+- [Careers](https://www.guidewheel.com/company/careers)
+- [Partnerships](https://www.guidewheel.com/partnerships)
+- [Contact / Book a Demo](https://www.guidewheel.com/company/contact)
+
+## Contact
+- Email: info@guidewheel.com
+- LinkedIn: https://www.linkedin.com/company/guidewheel/

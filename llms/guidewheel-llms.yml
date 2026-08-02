@@ -1,0 +1,23 @@
+generated: '2026-08-01'
+method: searched
+note: >-
+  Both files are the provider's own verbatim llms.txt documents, saved unmodified. No
+  llms-full.txt is committed (see .gitignore).
+files:
+- file: guidewheel-llms.txt
+  source: https://www.guidewheel.com/llms.txt
+  http_status: 200
+  content_type: text/plain
+  bytes: 3454
+  scope: marketing site — company summary, solutions, industries, resources, company
+  first_party: true
+- file: guidewheel-help-center-llms.txt
+  source: https://support.guidewheel.app/llms.txt
+  http_status: 200
+  content_type: text/plain
+  bytes: 9250
+  scope: help centre article index (English + Spanish), including the two API articles
+  first_party: true
+  generator: Intercom help-centre platform
+x-evidence:
+  fetched: '2026-08-01'

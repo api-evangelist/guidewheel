@@ -1,0 +1,34 @@
+generated: '2026-08-01'
+method: searched
+source: https://www.guidewheel.com/pricing
+url: https://www.guidewheel.com/pricing
+model: annual-subscription
+currency: USD
+public_pricing: partial
+note: >-
+  Guidewheel publishes a single entry price point rather than a tiered plan table. No
+  self-service sign-up or free trial is published; the only conversion path is "Book a
+  Demo".
+plans:
+- name: AI-Powered FactoryOps
+  price: 15000
+  currency: USD
+  interval: year
+  price_qualifier: starting at
+  included_units: 10 machines (first 10 machines included)
+  features:
+  - Real-time production intelligence
+  - Non-intrusive clip-on sensor connectivity for machines of any age, make or model
+  - Cloud connectivity via ethernet, WiFi or LTE
+  - Native ERP integration (SAP) plus Oracle, Epicor, Microsoft Dynamics and BI tools
+  - Workato connections and open API access for custom integrations
+  - Dedicated onboarding and ongoing support (in-person and virtual)
+  api_access: true
+  signup_url: https://www.guidewheel.com/company/contact
+free_tier: false
+free_trial:
+  published: false
+x-evidence:
+  fetched: '2026-08-01'
+  url: https://www.guidewheel.com/pricing
+  http_status: 200

@@ -1,0 +1,33 @@
+generated: '2026-08-01'
+method: searched
+source: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+api: Guidewheel REST API v1
+environments:
+- name: production
+  base_url: tenant-specific — provided with credentials
+  public: false
+- name: sandbox
+  base_url: provided on request
+  public: false
+access: on-request
+self_service: false
+test_values:
+  published: false
+  note: >-
+    Guidewheel documents that a sandbox environment exists and that its base URL is
+    provided on request, but publishes no test credentials, magic test identifiers,
+    fixture data, or simulation/trigger tooling. Nothing has been invented here.
+key_separation:
+  documented: false
+  note: >-
+    No test-vs-live API key prefix or mode flag is documented; environments are
+    separated by base URL rather than by key prefix.
+time_simulation:
+  supported: unknown
+  documented: false
+x-evidence:
+  fetched: '2026-08-01'
+  url: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+  http_status: 200
+  quote: 'Environments — Production base URL: provided with credentials (tenant-specific);
+    Sandbox base URL: provided on request'

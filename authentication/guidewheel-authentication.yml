@@ -1,0 +1,108 @@
+generated: '2026-08-01'
+method: searched
+source: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+docs: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+note: >-
+  Derived from the provider's published API and account documentation, not from an
+  OpenAPI document — Guidewheel does not publish a machine-readable contract (the
+  detailed technical API guide is password protected and provided on request).
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+  - query
+  oauth2_flows: []
+  sso: true
+  mfa: true
+schemes:
+- name: ApiKeyHeader
+  type: apiKey
+  in: header
+  parameter_name: x-api-key
+  status: current
+  scope: >-
+    Company-scoped. Each API key only has access to the company data associated with
+    it.
+  transport: HTTPS required for all requests.
+  example: 'curl "https://<base-url>/api/v1/devices" -H "x-api-key: $API_KEY"'
+  sources:
+  - https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+- name: ApiKeyQuery
+  type: apiKey
+  in: query
+  parameter_name: api_key
+  status: deprecated
+  note: >-
+    Older integrations may use an api_key query parameter; the provider documents this
+    as deprecated in favour of the x-api-key header.
+  sources:
+  - https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+end_user_authentication:
+  note: >-
+    The API itself uses a company-scoped API key. The following applies to human sign-in
+    to the Guidewheel web/mobile application, not to API clients.
+  login:
+    url: https://app.guidewheel.app/
+    identifier: username (explicitly not the email address)
+    password_policy: 12-character password
+    docs: https://support.guidewheel.app/en/articles/12168446-how-to-login-to-guidewheel
+  sso:
+    supported: true
+    provider: WorkOS
+    protocols:
+    - SAML
+    - OIDC
+    identity_providers:
+    - Okta
+    - Microsoft Entra ID / Azure AD
+    - Google
+    - OneLogin
+    - any IdP supporting SAML or OIDC
+    saml_requirements:
+      provided_by_workos:
+      - ACS URL (Assertion Consumer Service URL)
+      - SP Entity ID
+      provided_by_customer:
+      - Metadata URL (recommended)
+      - XML metadata file upload
+      - 'Manual entry: IdP Single Sign-On URL, IdP Entity ID / Issuer, X.509 signing
+        certificate'
+      attribute_mappings:
+      - email -> user.email
+      - firstName -> user.firstName
+      - lastName -> user.lastName
+    oidc_requirements:
+    - Client ID
+    - Client Secret
+    - Discovery Endpoint (.well-known/openid-configuration URL)
+    user_provisioning: false
+    mfa_on_sso: false
+    password_login_can_be_blocked: true
+    onboarding: Contact your account executive or customer success manager for an invite link.
+    docs: https://support.guidewheel.app/en/articles/14175623-how-to-set-up-single-sign-on-sso-with-guidewheel
+  mfa:
+    supported: true
+    self_service: true
+    methods:
+    - SMS
+    - WhatsApp
+    docs: https://support.guidewheel.app/en/articles/8891042-setting-up-two-factor-authentication
+  roles_and_permissions:
+    docs: https://support.guidewheel.app/en/articles/7258359-roles-and-permissions
+x-evidence:
+  fetched: '2026-08-01'
+  urls:
+  - url: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+    http_status: 200
+  - url: https://support.guidewheel.app/en/articles/14175623-how-to-set-up-single-sign-on-sso-with-guidewheel
+    http_status: 200
+  - url: https://support.guidewheel.app/en/articles/8891042-setting-up-two-factor-authentication
+    http_status: 200
+  negative:
+  - url: https://api.guidewheel.app/.well-known/openid-configuration
+    http_status: 200
+    result: SPA HTML shell, not an OIDC discovery document
+  - url: https://api.guidewheel.app/.well-known/oauth-authorization-server
+    http_status: 200
+    result: SPA HTML shell, not an RFC 8414 document

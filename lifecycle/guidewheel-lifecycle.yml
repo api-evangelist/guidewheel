@@ -1,0 +1,53 @@
+generated: '2026-08-01'
+method: searched
+source: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+versioning:
+  scheme: uri-path
+  current: v1
+  base_path: /api/v1
+  docs: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+  note: >-
+    The public integration API is v1. The Guidewheel web application separately calls an
+    internal /api/v2 surface from its own front end; that surface is not documented as a
+    customer-facing API and is not catalogued here.
+deprecation:
+  policy_url: null
+  policy_published: false
+  sunset_header: unknown
+  deprecated_items:
+  - item: api_key query parameter authentication
+    replacement: x-api-key request header
+    status: deprecated
+    source: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+  note: >-
+    Guidewheel marks one legacy authentication mechanism as deprecated but publishes no
+    deprecation policy, no notice period, and no RFC 8594 Sunset/Deprecation header
+    support. No Deprecation pointer is emitted.
+sla:
+  url: null
+  uptime_target: null
+  published: false
+status_page:
+  url: https://guidewheel.statuspage.io/
+  provider: Atlassian Statuspage
+  page_id: dhbyw6gfjrjf
+  components:
+  - name: Guidewheel Portal
+    status_at_probe: operational
+  history_api: https://guidewheel.statuspage.io/api/v2/summary.json
+  probed: '2026-08-01'
+changelog:
+  url: https://support.guidewheel.app/en/collections/2297342-new-guidewheel-releases
+  detail: changelog/guidewheel-changelog.yml
+stability:
+  documented: false
+  note: No beta/GA labelling or stability tiers published for API resources.
+deprecated_operations: []
+x-evidence:
+  fetched: '2026-08-01'
+  urls:
+  - url: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+    http_status: 200
+  - url: https://guidewheel.statuspage.io/api/v2/components.json
+    http_status: 200
+    content_type: application/json

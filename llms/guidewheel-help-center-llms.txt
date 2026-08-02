@@ -1,0 +1,79 @@
+# Guidewheel Help Center
+
+> Learn how the product works and how to use it
+
+## English
+
+### Getting Started
+
+- [How to Reach Guidewheel Support](https://support.guidewheel.app/en/articles/10185853-how-to-reach-guidewheel-support.md): Learn about the different ways to reach our live customer support team
+
+### Training Resources and Videos
+
+- [Train your team to use the Guidewheel Scoreboard](https://support.guidewheel.app/en/articles/8870704-train-your-team-to-use-the-guidewheel-scoreboard.md)
+- [Real-time Review](https://support.guidewheel.app/en/articles/4844768-real-time-review.md): See where to improve at a glance
+- [Past Performance Review](https://support.guidewheel.app/en/articles/4844782-past-performance-review.md): See trends and find best practices
+- [Tag Downtime](https://support.guidewheel.app/en/articles/4844788-tag-downtime.md): Share your knowledge of the shop floor
+- [Focus Actions](https://support.guidewheel.app/en/articles/4844790-focus-actions.md): Know your top offender Direct your process improvement efforts
+- [Detecting leaks for your compressed air system](https://support.guidewheel.app/en/articles/2746970-detecting-leaks-for-your-compressed-air-system.md): Getting around to finding leaks the easy way!
+- [How to receive notifications via WhatsApp](https://support.guidewheel.app/en/articles/9298551-how-to-receive-notifications-via-whatsapp.md): Instructions on how to change settings to receive notifications via WhatsApp
+- [How to Add Manual Production Entries](https://support.guidewheel.app/en/articles/9290142-how-to-add-manual-production-entries.md): Manual production entry instructions
+- [How to tag](https://support.guidewheel.app/en/articles/9639494-how-to-tag.md): The 3 places to tag in Guidewheel and how to choose which is right for you
+- [Improve OEE monitoring by tracking Scrap in real-time](https://support.guidewheel.app/en/articles/9926413-improve-oee-monitoring-by-tracking-scrap-in-real-time.md)
+- [Use Guidewheel to make shift start-up meetings more effective](https://support.guidewheel.app/en/articles/9408845-use-guidewheel-to-make-shift-start-up-meetings-more-effective.md)
+- [Setting Up ‘Do Not Disturb’ for Alerts](https://support.guidewheel.app/en/articles/4461074-setting-up-do-not-disturb-for-alerts.md): Instructions for using the Do Not Disturb feature for alerts in Guidewheel
+- [Best practices for alerts](https://support.guidewheel.app/en/articles/9171540-best-practices-for-alerts.md)
+- [Type of Alerts to set up](https://support.guidewheel.app/en/articles/9486794-type-of-alerts-to-set-up.md): Articles describing the different types of alerts that can be set up in Guidewheel
+- [How to decide who should receive Alerts](https://support.guidewheel.app/en/articles/9486797-how-to-decide-who-should-receive-alerts.md): Article explaining how teams can decide which teammates should receive different types of alerts
+
+### Installation
+
+- [Pre-Installation Checklist](https://support.guidewheel.app/en/articles/8890321-pre-installation-checklist.md): Steps to take before you install Guidewheel to ensure a smooth setup
+- [General Installation Guide](https://support.guidewheel.app/en/articles/8365654-general-installation-guide.md): Step-by-step guide for general installation of CT Sensors
+- [Set up for IT teams](https://support.guidewheel.app/en/articles/8365555-set-up-for-it-teams.md): IT Information for the Guidewheel Hub
+
+### Resources for admins
+
+- [Average, Min or Max as threshold setting](https://support.guidewheel.app/en/articles/7897281-average-min-or-max-as-threshold-setting.md): You can now set up your alerts to use average, min or max values.
+- [Roles and permissions](https://support.guidewheel.app/en/articles/7258359-roles-and-permissions.md): This article shows roles and permissions in Guidewheel. In here you'll learn who has access to edit or view.
+- [How to rotate between multiple Guidewheel views on a display monitor](https://support.guidewheel.app/en/articles/6746151-how-to-rotate-between-multiple-guidewheel-views-on-a-display-monitor.md): Use this guide to setup a screen that rotates between Guidewheel tabs so that your team can have production insights in realtime.
+- [API: Integrate with Guidewheel](https://support.guidewheel.app/en/articles/6732403-api-integrate-with-guidewheel.md): Overview of Guidewheel’s API capabilities
+- [How to filter tags for your devices](https://support.guidewheel.app/en/articles/9072046-how-to-filter-tags-for-your-devices.md)
+- [How to Set Up Single Sign On \(SSO\) with Guidewheel](https://support.guidewheel.app/en/articles/14175623-how-to-set-up-single-sign-on-sso-with-guidewheel.md): An overview on getting Single Sign On \(SSO\) configured for your Guidewheel account
+- [Guidewheel API — CMMS/ERP Integration guide](https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide.md)
+
+### Energy
+
+- [Saving money and time with data-driven purchase decisions](https://support.guidewheel.app/en/articles/2872223-saving-money-and-time-with-data-driven-purchase-decisions.md): Using Guidewheel to know if the machines you are using are the right ones for you
+- [Optimizing pumps](https://support.guidewheel.app/en/articles/2872207-optimizing-pumps.md)
+- [Optimizing chillers](https://support.guidewheel.app/en/articles/2872190-optimizing-chillers.md)
+- [Optimizing compressed air systems](https://support.guidewheel.app/en/articles/2872184-optimizing-compressed-air-systems.md)
+- [Optimizing cooling towers](https://support.guidewheel.app/en/articles/2872195-optimizing-cooling-towers.md)
+- [Optimizing refrigeration/cold-rooms](https://support.guidewheel.app/en/articles/2872201-optimizing-refrigeration-cold-rooms.md)
+- [Managing your power factor](https://support.guidewheel.app/en/articles/2872168-managing-your-power-factor.md): Optimizing power factor for maximum efficiency
+- [Testing the impact of startup speed on peak](https://support.guidewheel.app/en/articles/2879162-testing-the-impact-of-startup-speed-on-peak.md): Using staggered start up times to reduce peak demand
+- [Reducing peak from machine startups](https://support.guidewheel.app/en/articles/2872166-reducing-peak-from-machine-startups.md): How to test, implement staggered machine startups for peak shaving
+- [Identifying peak startup times and staggering machine startup](https://support.guidewheel.app/en/articles/2879159-identifying-peak-startup-times-and-staggering-machine-startup.md)
+- [Minimizing your energy tariffs](https://support.guidewheel.app/en/articles/2872214-minimizing-your-energy-tariffs.md): Whether it is comparing historical energy bills to your actual usage or assessing future savings
+- [Track your energy intensity to improve your operations](https://support.guidewheel.app/en/articles/2872248-track-your-energy-intensity-to-improve-your-operations.md): Reviewing energy intensity daily by shift and machine to identify variance in efficiency for a given product and level of production
+- [Using Guidewheel Production to identify operational changes to improve energy efficiency](https://support.guidewheel.app/en/articles/2872174-using-guidewheel-production-to-identify-operational-changes-to-improve-energy-efficiency.md)
+- [Creating groups to track machine energy consumption and energy intensity](https://support.guidewheel.app/en/articles/2908127-creating-groups-to-track-machine-energy-consumption-and-energy-intensity.md): Device groups can help you track energy consumption easily
+- [Additional Energy Management features](https://support.guidewheel.app/en/articles/4147754-additional-energy-management-features.md): Use Guidewheel to manage your factory's energy use
+- [Exporting your machine's energy calculations data or graphs](https://support.guidewheel.app/en/articles/2915430-exporting-your-machine-s-energy-calculations-data-or-graphs.md)
+
+## Español
+
+### Recursos de Entrenamiento
+
+- [Entrene a su equipo para usar el marcador Guidewheel](https://support.guidewheel.app/es/articles/8870704-entrene-a-su-equipo-para-usar-el-marcador-guidewheel.md)
+- [Cómo recibir notificaciones por WhatsApp](https://support.guidewheel.app/es/articles/9298551-como-recibir-notificaciones-por-whatsapp.md): Instrucciones sobre cómo cambiar la configuración para recibir notificaciones por WhatsApp
+- [Cómo cargar entradas de producción manuales](https://support.guidewheel.app/es/articles/9290142-como-cargar-entradas-de-produccion-manuales.md): Instrucciones manuales de entrada de la producción
+- [Buenas prácticas para las alertas](https://support.guidewheel.app/es/articles/9171540-buenas-practicas-para-las-alertas.md)
+
+### Instalación
+
+- [Lista de verificación previa a la instalación](https://support.guidewheel.app/es/articles/8890321-lista-de-verificacion-previa-a-la-instalacion.md): Pasos a seguir antes de instalar Guidewheel para garantizar una configuración sin problemas
+
+### Recursos para Administradores de Guidewheel
+
+- [Cómo configurar el inicio de sesión único \(SSO\) para su cuenta de Guidewheel](https://support.guidewheel.app/es/articles/14175623-como-configurar-el-inicio-de-sesion-unico-sso-para-su-cuenta-de-guidewheel.md): Una guía general para configurar el inicio de sesión único \(SSO\) en su cuenta de Guidewheel

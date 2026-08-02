@@ -1,23 +1,133 @@
 aid: guidewheel
 name: Guidewheel
-description: 'Guidewheel is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Guidewheel is a FactoryOps platform for manufacturing. Non-invasive,
+  clip-on current sensors attach to any machine''s power leads — regardless of age,
+  make or model — and stream a real-time heartbeat of machine state (running, idle,
+  down) over cellular, with no PLC, SCADA or plant Wi-Fi access required. The platform
+  turns that signal into real-time OEE, downtime categorization and reasoning, Pareto
+  analysis, cycle-time tracking, scrap tracking, shift and plant reporting, and alerting.
+  Guidewheel exposes a REST/JSON API under /api/v1 for CMMS and ERP integration —
+  devices, telemetry, uptime and load states, energy, issues, production entries, SKUs,
+  tags, device lists, plants, shifts and scrap — authenticated with a company-scoped
+  API key in the x-api-key header. It also ships native SAP integration plus Oracle,
+  Epicor, Microsoft Dynamics, Power BI and MaintainX connections via Workato.'
 url: https://raw.githubusercontent.com/api-evangelist/guidewheel/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-01'
 modified: '2026-08-01'
+image: https://cdn.prod.website-files.com/680ab1b52d269fa62a84d433/68a74e2071f0ccbc78d31733_guidewheel.jpg
 tags:
 - Company
-apis: []
+- Manufacturing
+- Industrial IoT
+- Machine Monitoring
+- OEE
+- FactoryOps
+- Predictive Maintenance
+- Energy
+- Sensors
+- Telemetry
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: guidewheel:rest-api-v1
+  name: Guidewheel REST API v1
+  description: 'REST over HTTPS with JSON request/response (CSV supported on specific
+    bulk-load endpoints) for integrating Guidewheel with external ERP, MES and CMMS
+    systems. Covers devices and equipment details, minute-level telemetry, uptime,
+    load/run states, energy consumption, threshold-change history, issues (downtime
+    events) with comments and tags, production entries including bulk upload, SKUs,
+    tags, device lists, plants, shifts and scrap. All endpoints require a company-scoped
+    API key in the x-api-key request header.'
+  humanURL: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+  baseURL: https://app.guidewheel.app/api/v1
+  x-base-url-note: 'Production base URL is tenant-specific and provided with credentials;
+    a sandbox base URL is provided on request. The documented request form is
+    https://<base-url>/api/v1/<resource>. app.guidewheel.app is the reachable Guidewheel
+    production platform host; the /api/v1 path is not served anonymously from it (404
+    without tenant routing / credentials).'
+  tags:
+  - Manufacturing
+  - Machine Monitoring
+  - OEE
+  - Telemetry
+  - Energy
+  properties:
+  - type: APIReference
+    url: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+  - type: Documentation
+    url: https://support.guidewheel.app/en/articles/6732403-api-integrate-with-guidewheel
+  - type: Authentication
+    url: authentication/guidewheel-authentication.yml
+  - type: RateLimits
+    url: rate-limits/guidewheel-rate-limits.yml
+  - type: ErrorCatalog
+    url: errors/guidewheel-problem-types.yml
+  - type: Conventions
+    url: conventions/guidewheel-conventions.yml
+  - type: DataModel
+    url: data-model/guidewheel-data-model.yml
+  - type: Sandbox
+    url: sandbox/guidewheel-sandbox.yml
 common:
 - type: Website
-  url: https://forgeglobal.com/guidewheel_stock/
+  url: https://www.guidewheel.com/
+- type: Documentation
+  url: https://support.guidewheel.app/en/
+- type: APIReference
+  url: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+- type: GettingStarted
+  url: https://support.guidewheel.app/en/collections/1677909-getting-started
+- type: Support
+  url: https://support.guidewheel.app/en/articles/10185853-how-to-reach-guidewheel-support
+- type: Blog
+  url: https://www.guidewheel.com/blog
+- type: Pricing
+  url: https://www.guidewheel.com/pricing
+- type: Login
+  url: https://app.guidewheel.app/
+- type: TermsOfService
+  url: https://www.guidewheel.com/terms-and-conditions
+- type: PrivacyPolicy
+  url: https://www.guidewheel.com/privacy-policy
+- type: StatusPage
+  url: https://guidewheel.statuspage.io/
+- type: ChangeLog
+  url: changelog/guidewheel-changelog.yml
+- type: Authentication
+  url: authentication/guidewheel-authentication.yml
+- type: RateLimits
+  url: rate-limits/guidewheel-rate-limits.yml
+- type: Plans
+  url: plans/guidewheel-plans.yml
+- type: ErrorCatalog
+  url: errors/guidewheel-problem-types.yml
+- type: Conventions
+  url: conventions/guidewheel-conventions.yml
+- type: Lifecycle
+  url: lifecycle/guidewheel-lifecycle.yml
+- type: DataModel
+  url: data-model/guidewheel-data-model.yml
+- type: Sandbox
+  url: sandbox/guidewheel-sandbox.yml
+- type: Conformance
+  url: conformance/guidewheel-conformance.yml
+- type: WellKnown
+  url: well-known/guidewheel-well-known.yml
+- type: LLMsTxt
+  url: llms/guidewheel-llms.txt
+- type: DomainSecurity
+  url: security/guidewheel-domain-security.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/guidewheel/
+x-enrichment:
+  date: '2026-08-01'
+  status: enriched
+  artifacts_added: 16
+  pass: local-v1
+

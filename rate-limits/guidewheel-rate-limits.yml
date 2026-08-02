@@ -1,0 +1,30 @@
+generated: '2026-08-01'
+method: searched
+source: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+api: Guidewheel REST API v1
+scope: per API key (company-scoped)
+enforcement_status: 429
+rate_limits:
+- name: Daily call limit
+  limit_count: 1000
+  interval: day
+  unit: requests
+  applies_to: all /api/v1 endpoints
+  response: HTTP 429
+- name: Per-minute call limit
+  limit_count: 50
+  interval: minute
+  unit: requests
+  applies_to: all /api/v1 endpoints
+  response: HTTP 429
+headers:
+  documented: false
+  note: >-
+    Guidewheel documents the 429 status and the numeric limits but does not publish
+    rate-limit response headers (no RateLimit-Limit / RateLimit-Remaining / Retry-After
+    documented in the public integration guide).
+x-evidence:
+  fetched: '2026-08-01'
+  url: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+  http_status: 200
+  quote: '429 rate limited (1000 calls per day and 50 calls per minute)'

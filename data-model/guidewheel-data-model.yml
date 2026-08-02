@@ -1,0 +1,150 @@
+generated: '2026-08-01'
+method: searched
+source: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+api: Guidewheel REST API v1
+note: >-
+  Entities and endpoints are transcribed from the provider's published data-model quick
+  reference and endpoint table. Guidewheel publishes no OpenAPI, so field-level schemas
+  are not available — the guide states "schemas below are representative; exact fields
+  may vary per tenant configuration". Relationships below reflect only what the endpoint
+  table and entity descriptions state; none are inferred from a spec.
+entities:
+- name: Device
+  path: /api/v1/devices
+  description: A sensor that represents a machine, line or cell.
+  by_id: true
+  methods: [GET, POST]
+  sub_resources:
+  - name: Telemetry
+    description: Device-level data per minute and unit of measurement for any measured
+      metric; per second for active power data.
+    methods: [GET]
+  - name: Uptime
+    description: How long each machine spent running, idle or down over a period.
+    group_by: [day]
+    methods: [GET]
+  - name: Load state / Device state
+    description: Time series of a device's state — online, idle, offline, planned
+      downtime, nodata.
+    methods: [GET]
+  - name: Energy
+    description: Energy consumption per machine over time.
+    group_by: [day]
+    group_by_only: true
+    methods: [GET]
+  - name: Threshold changes
+    description: History of changes to a machine's alert threshold settings.
+    methods: [GET]
+- name: DeviceList
+  path: /api/v1/device-lists
+  description: Curated group of machines for role-based visibility; used to report on
+    a group as a unit (e.g. uptime by plant).
+  by_id: true
+  methods: [GET]
+- name: Issue
+  path: /api/v1/issues
+  description: An event created by the alerting system; usually a downtime event or
+    anomaly. Supports comments and tags, and write-back of external references such as
+    a CMMS work order number or status.
+  by_id: true
+  methods: [GET, POST, PUT, PATCH, DELETE]
+- name: ProductionEntry
+  path: /api/v1/production-entries
+  description: A production run with a start and end time and the details of that run —
+    good units, scrap, runtime. Supports single create and bulk file upload, plus an
+    upload-status check.
+  by_id: true
+  methods: [GET, POST, PUT]
+- name: SKU
+  path: /api/v1/skus
+  description: Product / SKU list so production records and targets line up with the
+    products defined in the ERP.
+  by_id: true
+  methods: [GET, POST]
+- name: Tag
+  path: /api/v1/tags
+  description: Structured categorization of an issue or a piece of scrap; most often a
+    downtime code.
+  by_id: false
+  methods: [GET, POST]
+- name: Plant
+  path: /api/v1/plants
+  description: A facility. Exposes which shift a plant is currently on.
+  by_id: false
+  methods: [GET]
+- name: Shift
+  path: /api/v1/shifts
+  description: A list of shifts with start and end times, status and duration.
+  by_id: false
+  methods: [GET]
+- name: Scrap
+  path: /api/v1/scraps
+  description: Individual scrap events recorded in Guidewheel within a time range.
+  by_id: true
+  by_id_fields: [id, device id]
+  methods: [GET, POST]
+relationships:
+- from: DeviceList
+  to: Device
+  kind: has_many
+  via: device list id
+  evidence: '"List of devices by plant or list — Yes (device list id)"'
+- from: Plant
+  to: Device
+  kind: has_many
+  via: plant
+  evidence: '"Look up which shift a plant is currently on"; devices are grouped by plant
+    for reporting.'
+- from: Plant
+  to: Shift
+  kind: has_many
+  via: current plant shift
+  evidence: '"Current plant shift" endpoint'
+- from: Issue
+  to: Device
+  kind: belongs_to
+  via: device
+  evidence: Issues are downtime events raised against a machine.
+- from: Issue
+  to: Tag
+  kind: has_many
+  via: tags
+  evidence: '"Issues, comments, and tags — Yes (issue, tags)"'
+- from: Scrap
+  to: Device
+  kind: belongs_to
+  via: device id
+  evidence: '"Scrap — Yes (id, device id)"'
+- from: Scrap
+  to: Tag
+  kind: has_many
+  via: tags
+  evidence: '"Tag — Structured categorization of an issue or a piece of scrap"'
+- from: ProductionEntry
+  to: SKU
+  kind: belongs_to
+  via: sku
+  evidence: '"Pull your product/SKU list so production records and targets line up with
+    the products defined in your ERP"'
+- from: ProductionEntry
+  to: Device
+  kind: belongs_to
+  via: device
+  evidence: '"records of what each machine produced"'
+- from: Device
+  to: Telemetry
+  kind: has_many
+  via: device id
+  evidence: '"Minute level data per device — Yes (device id)"'
+gaps:
+- No field-level schemas published (no OpenAPI, no JSON Schema).
+- Tenant-configurable fields; the provider states exact fields vary per tenant.
+- No id-prefix or id-format convention published.
+x-evidence:
+  fetched: '2026-08-01'
+  url: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+  http_status: 200
+  sections:
+  - '4) Data model quick reference'
+  - '6) Summary of API endpoints and use cases'
+  - '7) Detailed table of API endpoints'

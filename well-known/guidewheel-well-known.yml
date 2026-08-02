@@ -1,0 +1,143 @@
+generated: '2026-08-01'
+method: probed
+source: live probes of every Guidewheel host on 2026-08-01
+note: >-
+  Guidewheel serves no first-party /.well-known discovery document. IMPORTANT probe
+  caveat: every *.guidewheel.app host is a single-page application that answers HTTP 200
+  with an 83,433-byte HTML shell for extensionless /.well-known/* paths. Those 200s are
+  SPA catch-alls, NOT documents, and are recorded as misses below. Only text/plain or
+  application/json bodies were accepted as hits.
+hosts:
+- host: https://www.guidewheel.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 200
+    content_type: text/plain
+    bytes: 3454
+    file: ../llms/guidewheel-llms.txt
+  - path: /robots.txt
+    status: 200
+    content_type: text/plain
+    bytes: 822
+- host: https://app.guidewheel.app
+  note: Guidewheel application / login host.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 200
+    result: spa-html-shell
+    accepted: false
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    result: spa-html-shell
+    accepted: false
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    result: spa-html-shell
+    accepted: false
+  - path: /.well-known/api-catalog
+    status: 200
+    result: spa-html-shell
+    accepted: false
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /robots.txt
+    status: 200
+    content_type: text/plain
+    bytes: 1836
+- host: https://api.guidewheel.app
+  note: >-
+    Resolves and returns the same application SPA as app.guidewheel.app; it does not
+    serve the documented /api/v1 REST surface anonymously (Cannot GET /api/v1/devices,
+    404). Same probe results as app.guidewheel.app.
+  documents:
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /robots.txt
+    status: 200
+    content_type: text/plain
+    bytes: 1836
+- host: https://docs.guidewheel.app
+  note: CNAME of the same application SPA; not a documentation site.
+  documents:
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://developers.guidewheel.app
+  note: CNAME of the same application SPA; not a developer portal.
+  documents:
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+- host: https://support.guidewheel.app
+  note: Intercom-hosted help centre.
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/plain
+    bytes: 713
+    file: guidewheel-support-host-security.txt
+    first_party: false
+    owner: Intercom (help-centre vendor)
+    canonical: https://app.intercom.com/.well-known/security.txt
+    note: >-
+      This is Intercom's vendor security.txt served on Guidewheel's help-centre
+      subdomain, not a Guidewheel vulnerability-disclosure programme. It is saved for the
+      record but is deliberately NOT wired as a SecurityTxt or Security pointer.
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /llms.txt
+    status: 200
+    content_type: text/plain
+    bytes: 9250
+    file: ../llms/guidewheel-help-center-llms.txt
+  - path: /robots.txt
+    status: 200
+    content_type: text/plain
+    bytes: 1999
+summary:
+  first_party_well_known_documents: 0
+  llms_txt: 2
+  security_txt_first_party: false
+  agent_card: false
+  oauth_metadata: false
+  api_catalog: false

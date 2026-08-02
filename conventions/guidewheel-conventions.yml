@@ -1,0 +1,97 @@
+generated: '2026-08-01'
+method: searched
+source: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+api: Guidewheel REST API v1
+style:
+  protocol: REST over HTTPS
+  request_format: JSON
+  response_format: JSON
+  bulk_format: CSV (supported on specific bulk-load endpoints, e.g. production entries)
+  framework: NestJS
+  base_path: /api/v1
+  tls_required: true
+authentication:
+  style: api-key-header
+  header: x-api-key
+  deprecated_alternative: api_key query parameter
+  scope: company-scoped (one key per company)
+  detail: authentication/guidewheel-authentication.yml
+idempotency:
+  supported: false
+  documented: false
+  note: >-
+    Guidewheel publishes no idempotency key, no idempotency header, and no retry-safety
+    contract for its write endpoints (POST/PATCH/PUT on issues, production entries,
+    SKUs, tags, scraps). Bulk production-entry upload has a separate upload-status
+    check, which is a job-status pattern rather than idempotency. Recorded as absent —
+    no Idempotency pointer is emitted for this provider.
+pagination:
+  documented: false
+  note: >-
+    No pagination style, parameters, or response envelope fields are documented in the
+    public integration guide. The guide states that exact path and query parameters are
+    available only via the technical guide provided on request.
+time_parameters:
+  from_ts:
+    description: Start of the requested window.
+    formats:
+    - unix milliseconds (most endpoints)
+    - ISO 8601 string (some endpoints), e.g. '2026-06-01T00:00:00.000Z'
+  to_ts:
+    description: End of the requested window.
+    formats:
+    - unix milliseconds (most endpoints)
+    - ISO 8601 string (some endpoints)
+  note: >-
+    Timestamp format is not uniform across endpoints — most use unix ms, some use ISO
+    8601. This is an explicit inconsistency the provider documents.
+grouping:
+  parameter: group_by
+  values:
+  - day
+  availability: select endpoints only (uptime; energy consumption is day-only)
+resource_identity:
+  path_parameter: id
+  note: Most resources accept an id path parameter to address a single object (e.g.
+    device id, issue id, device list id, scrap id).
+granularity:
+  telemetry: per-minute device-level data for any measured metric; per-second for active
+    power data.
+versioning:
+  scheme: uri-path
+  current: v1
+  detail: lifecycle/guidewheel-lifecycle.yml
+error_envelope:
+  documented: false
+  status_codes: errors/guidewheel-problem-types.yml
+rate_limiting:
+  documented: true
+  detail: rate-limits/guidewheel-rate-limits.yml
+  signalling: HTTP 429; no rate-limit response headers documented.
+request_tracing:
+  documented: false
+  note: No request-id / correlation-id header documented.
+field_expansion:
+  documented: false
+metadata:
+  documented: false
+webhooks:
+  documented: false
+  note: >-
+    The API overview article states Guidewheel offers "both inbound and outbound APIs",
+    but no webhook catalog, event types, delivery model, or signing scheme is published.
+    Alerts are delivered to humans over email, SMS, WhatsApp and mobile push, not as a
+    developer webhook surface. No Webhooks pointer is emitted.
+documentation_access:
+  public: partial
+  note: >-
+    The customer-facing integration guide is public. The detailed technical overview —
+    query parameters and sample responses — is password protected and provided on
+    request, which is why no OpenAPI, examples, or schema artifacts exist in this repo.
+x-evidence:
+  fetched: '2026-08-01'
+  urls:
+  - url: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+    http_status: 200
+  - url: https://support.guidewheel.app/en/articles/6732403-api-integrate-with-guidewheel
+    http_status: 200

@@ -1,0 +1,91 @@
+generated: '2026-08-01'
+method: derived
+source: >-
+  https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+  + https://support.guidewheel.app/en/articles/14175623-how-to-set-up-single-sign-on-sso-with-guidewheel
+note: >-
+  Derived from the provider's published documentation. Guidewheel publishes no OpenAPI,
+  so no spec-based assertions were possible. Guidewheel publishes no trust centre, no
+  security page, and no named certification (SOC 2 / ISO 27001 / etc.) on any public
+  surface probed on 2026-08-01 — so no Compliance pointer is emitted.
+standards:
+- id: rest-json
+  conforms: true
+  evidence: 'Published as "REST over HTTPS with JSON request/response"; resource-oriented
+    /api/v1 paths with GET/POST/PUT/PATCH/DELETE.'
+- id: https-tls
+  conforms: true
+  evidence: '"All requests must use HTTPS"; TLS 1.3 observed on all probed hosts.'
+- id: api-key-auth
+  conforms: true
+  evidence: x-api-key request header, company-scoped.
+- id: oauth2
+  conforms: false
+  evidence: No OAuth 2.0 flow published for API access; API auth is a static company key.
+- id: oidc
+  conforms: partial
+  evidence: 'OIDC is supported for end-user SSO into the application via WorkOS (customer
+    supplies Client ID, Client Secret and discovery endpoint) — not for API
+    authorization. No OIDC discovery document is served by Guidewheel itself.'
+- id: saml2
+  conforms: true
+  evidence: SAML 2.0 SSO supported via WorkOS with ACS URL / SP Entity ID and X.509
+    signing certificate exchange.
+- id: scim
+  conforms: false
+  evidence: '"We do not support user provisioning at this time."'
+- id: openapi
+  conforms: false
+  evidence: No OpenAPI/Swagger document found at any probed host or docs path; detailed
+    technical API guide is password protected.
+- id: asyncapi
+  conforms: false
+  evidence: No event/streaming specification published; no webhook catalog.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Error contract is documented as bare HTTP status codes; no
+    application/problem+json envelope published.
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: No deprecation policy or Sunset/Deprecation header support published.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: 'No security.txt served by guidewheel.com or any *.guidewheel.app application
+    host. The security.txt at support.guidewheel.app belongs to Intercom (Canonical:
+    https://app.intercom.com/.well-known/security.txt), the help-centre vendor.'
+- id: rfc8615-well-known
+  conforms: false
+  evidence: No /.well-known discovery documents served; the application hosts answer
+    /.well-known/* with an SPA HTML shell.
+- id: a2a-agent-card
+  conforms: false
+  evidence: /.well-known/agent-card.json and /.well-known/agent.json return 404 on
+    guidewheel.com and every *.guidewheel.app host probed.
+- id: mcp
+  conforms: false
+  evidence: No Model Context Protocol server published. The in-product "Wheelie"
+    assistant is a natural-language interface inside the Guidewheel application, not an
+    exposed MCP endpoint.
+- id: llms-txt
+  conforms: true
+  evidence: First-party /llms.txt served at https://www.guidewheel.com/llms.txt (200,
+    text/plain) and a second at https://support.guidewheel.app/llms.txt.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency key or retry-safety contract published for write endpoints.
+- id: rate-limit-headers
+  conforms: false
+  evidence: 429 documented with numeric limits, but no RateLimit-* or Retry-After
+    headers published.
+certifications:
+  published: []
+  note: No SOC 2, ISO 27001, PCI DSS, HIPAA, FedRAMP or CSA STAR claim found on any
+    public Guidewheel surface probed on 2026-08-01.
+x-evidence:
+  fetched: '2026-08-01'
+  probes:
+  - {url: 'https://www.guidewheel.com/security', http_status: 404}
+  - {url: 'https://www.guidewheel.com/trust', http_status: 404}
+  - {url: 'https://www.guidewheel.com/compliance', http_status: 404}
+  - {host: trust.guidewheel.com, dns: NXDOMAIN}
+  - {host: security.guidewheel.com, dns: NXDOMAIN}

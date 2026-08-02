@@ -1,0 +1,62 @@
+generated: '2026-08-01'
+method: searched
+source: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+api: Guidewheel REST API v1
+format: http-status
+note: >-
+  Guidewheel publishes an HTTP status-code contract for the /api/v1 REST API but does
+  not publish an RFC 9457 application/problem+json envelope, error type URIs, or a
+  named error-code registry. The error body shape is not documented publicly — the
+  detailed technical guide with sample responses is provided on request. Nothing below
+  is inferred beyond what the integration guide states.
+envelope:
+  documented: false
+  media_type: application/json
+  rfc9457: false
+problems:
+- status: 200
+  title: Success
+  meaning: Request succeeded.
+- status: 201
+  title: Created
+  meaning: Resource created (POST endpoints — devices, issues, production entries,
+    SKUs, tags, scraps).
+- status: 400
+  title: Validation error
+  meaning: The request failed validation.
+  remediation: Check required fields, timestamp format (unix ms or ISO 8601) and query
+    parameter values.
+- status: 401
+  title: Authentication failure
+  meaning: Missing or invalid API key.
+  remediation: Send a valid company API key in the x-api-key request header over HTTPS.
+- status: 403
+  title: Unauthorized access
+  meaning: The API key is valid but not authorized for the requested company data.
+  remediation: Each API key is scoped to a single company; confirm the key matches the
+    tenant whose data you are requesting.
+- status: 404
+  title: Not found
+  meaning: The requested resource or object id does not exist.
+- status: 409
+  title: Conflict
+  meaning: The request conflicts with the current state of the resource.
+- status: 422
+  title: Unprocessable entity
+  meaning: The request was well-formed but could not be processed.
+- status: 429
+  title: Rate limited
+  meaning: The API key exceeded 1,000 calls per day or 50 calls per minute.
+  remediation: Back off and retry; see rate-limits/guidewheel-rate-limits.yml.
+- status: 500
+  title: Server error
+  meaning: 5xx server error.
+gaps:
+  - No RFC 9457 problem+json error envelope documented.
+  - No stable machine-readable error codes or error type URIs published.
+  - No Retry-After or RateLimit-* headers documented for 429.
+x-evidence:
+  fetched: '2026-08-01'
+  url: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+  http_status: 200
+  section: '3) Authentication and security — Common HTTP status codes'
