@@ -14,7 +14,7 @@ description: 'Guidewheel is a FactoryOps platform for manufacturing. Non-invasiv
 url: https://raw.githubusercontent.com/api-evangelist/guidewheel/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-08-01'
 modified: '2026-08-01'
 image: https://cdn.prod.website-files.com/680ab1b52d269fa62a84d433/68a74e2071f0ccbc78d31733_guidewheel.jpg
