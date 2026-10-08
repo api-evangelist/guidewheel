@@ -32,3 +32,16 @@ x-evidence:
   fetched: '2026-08-01'
   url: https://www.guidewheel.com/pricing
   http_status: 200
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - subscription
+  units: []
+  plans:
+  - name: AI-Powered FactoryOps
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
