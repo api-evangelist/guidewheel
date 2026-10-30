@@ -64,73 +64,105 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Guidewheel is a FactoryOps platform for manufacturing. Non-invasive, clip-on current
-sensors attach to any machine's power leads — regardless of age, make or model — and
-stream a real-time heartbeat of machine state (running, idle, down) over cellular, with
-no PLC, SCADA or plant Wi-Fi access required. That signal becomes real-time OEE,
-downtime categorization and reasoning, Pareto analysis, cycle-time tracking, scrap
-tracking, shift and plant reporting, and alerting.
+Guidewheel is a FactoryOps platform for manufacturing. Non-invasive, clip-on current sensors attach to any machine's power leads — regardless of age, make or model — and stream a real-time heartbeat of machine state (running, idle, down) over cellular, with no PLC, SCADA or plant Wi-Fi access required. The platform turns that signal into real-time OEE, downtime categorization and reasoning, Pareto analysis, cycle-time tracking, scrap tracking, shift and plant reporting, and alerting. Guidewheel exposes a REST/JSON API under /api/v1 for CMMS and ERP integration — devices, telemetry, uptime and load states, energy, issues, production entries, SKUs, tags, device lists, plants, shifts and scrap — authenticated with a company-scoped API key in the x-api-key header. It also ships native SAP integration plus Oracle, Epicor, Microsoft Dynamics, Power BI and MaintainX connections via Workato.
 
-- Website: https://www.guidewheel.com/
-- Help centre: https://support.guidewheel.app/en/
-- Application / login: https://app.guidewheel.app/
-- Status: https://guidewheel.statuspage.io/
-- Pricing: https://www.guidewheel.com/pricing
+**Areas:** Company · Manufacturing · Industrial IoT · Machine Monitoring · OEE · FactoryOps · Predictive Maintenance · Energy · Sensors · Telemetry
 
-## API
+## Guidewheel on APIs.io
 
-Guidewheel publishes a customer-facing REST/JSON API under `/api/v1` for CMMS and ERP
-integration:
+Everything profiled for Guidewheel is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/guidewheel/](https://apis.io/providers/guidewheel/)** — or go straight to one of the APIs or properties below.
 
-| Resource | Path | Methods |
-|---|---|---|
-| Devices (+ telemetry, uptime, load state, energy, threshold changes) | `/api/v1/devices` | GET, POST |
-| Issues (downtime events, comments, tags) | `/api/v1/issues` | GET, POST, PUT, PATCH, DELETE |
-| Production entries (incl. bulk CSV upload) | `/api/v1/production-entries` | GET, POST, PUT |
-| SKUs | `/api/v1/skus` | GET, POST |
-| Tags | `/api/v1/tags` | GET, POST |
-| Device lists | `/api/v1/device-lists` | GET |
-| Plants | `/api/v1/plants` | GET |
-| Shifts | `/api/v1/shifts` | GET |
-| Scrap | `/api/v1/scraps` | GET, POST |
+### APIs (1)
 
-- **Auth**: company-scoped API key in the `x-api-key` header (an `api_key` query
-  parameter is documented as deprecated). SSO for the application is SAML/OIDC via
-  WorkOS; 2FA over SMS/WhatsApp.
-- **Rate limits**: 1,000 calls/day and 50 calls/minute per key.
-- **Environments**: production base URL is tenant-specific and provided with
-  credentials; a sandbox base URL is provided on request.
-- **Reference**: https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide
+- [Guidewheel REST API v1](https://apis.io/apis/guidewheel/rest-api-v1/) — REST over HTTPS with JSON request/response (CSV supported on specific bulk-load endpoints) for integrating Guidewheel with external ERP, MES and CMMS…
 
-### No machine-readable contract
+### Published properties
 
-Guidewheel publishes **no OpenAPI, Swagger, GraphQL, AsyncAPI, MCP or A2A artifact**.
-The detailed technical API guide — query parameters and sample responses — is password
-protected and provided on request. Contract discovery on 2026-08-01 probed
-`/openapi.json`, `/openapi.yaml`, `/swagger.json`, `/v1/openapi.json`, `/api-docs`,
-`/redoc`, `/api/schema` and `/.well-known/*` against `www.guidewheel.com`,
-`api.guidewheel.app`, `app.guidewheel.app`, `docs.guidewheel.app`,
-`developers.guidewheel.app` and `support.guidewheel.app` — all miss. Note that every
-`*.guidewheel.app` host is one single-page application that answers 200 with an HTML
-shell for extensionless paths, so `api.`, `docs.` and `developers.` are CNAMEs of the
-app, not separate API/docs surfaces.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-Guidewheel does serve a first-party `llms.txt` at https://www.guidewheel.com/llms.txt.
+#### Security (2)
 
-## Artifacts
+Authentication, trust centre, and vulnerability disclosure.
 
-```
-authentication/  API key + SSO/MFA profile (searched)
-changelog/       dated product release notes (searched)
-conformance/     standards posture (derived)
-conventions/     request/response semantics, time params, gaps (searched)
-data-model/      entity graph for the v1 REST API (searched)
-errors/          HTTP status contract (searched)
-lifecycle/       versioning, deprecation, status page (searched)
-llms/            verbatim first-party llms.txt x2 (searched)
-plans/           pricing (searched)
-rate-limits/     1000/day, 50/min (searched)
-sandbox/         on-request sandbox environment (searched)
-security/        domain security probe (probed)
-well-known/      discovery probe index incl. negatives (probed)
-```
+- [Guidewheel Authentication](https://apis.io/security/guidewheel/guidewheel-authentication/)
+- [Guidewheel Domain Security](https://apis.io/security/guidewheel/guidewheel-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Guidewheel Plans](https://apis.io/plans/guidewheel/guidewheel-plans/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Guidewheel Rate Limits](https://apis.io/rate-limits/guidewheel/guidewheel-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.guidewheel.com/)
+- [Documentation](https://support.guidewheel.app/en/)
+- [Getting started](https://support.guidewheel.app/en/collections/1677909-getting-started)
+- [API reference](https://support.guidewheel.app/en/articles/15696169-guidewheel-api-cmms-erp-integration-guide)
+- [Pricing](https://www.guidewheel.com/pricing)
+- [Support](https://support.guidewheel.app/en/articles/10185853-how-to-reach-guidewheel-support)
+- [Blog](https://www.guidewheel.com/blog)
+- [Terms of service](https://www.guidewheel.com/terms-and-conditions)
+- [Privacy policy](https://www.guidewheel.com/privacy-policy)
+- [Status](https://guidewheel.statuspage.io/)
+
+## API Evangelist rating
+
+**Kin Score 38.6** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 0.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 52.6 |
+| Developer ergonomics | 54.8 |
+| Access clarity | 59.2 |
+
+**Agent readiness 7.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 20.5** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/guidewheel/](https://apis.io/providers/guidewheel/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Guidewheel: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/guidewheel/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
